@@ -1,0 +1,82 @@
+program ProjectMax;
+
+{$APPTYPE CONSOLE}
+
+type TArr = record
+   MyArray: array [2..8] of int64;
+end;
+
+    function FindNumber(i: Byte): Int64;
+    var
+        Number, Prev, Step, Digit : Int64;
+
+    begin
+        Prev := 0;
+        Digit := i;
+        Number := i;
+        Step := 10;
+        repeat
+            Number := Number + Step * (Digit * 2 mod 10 + Prev);
+            Prev := Digit * 2 div 10;
+            Digit := Number div Step;
+            Step := Step * 10;
+        until (Digit = i) and (Prev = 0);
+        FindNumber := Number;
+    end;
+
+    function FindNewNumber(Num: Int64): Int64;
+    var
+        Strg: String;
+        Code: Integer;
+        Numer: Int64;
+
+    begin
+        str(Num,Strg);
+        Delete(Strg,1,1);
+        val(Strg, Numer, Code);
+        FindNewNumber := Numer;
+    end;
+
+    function GetArray(A : int64): TArr;
+    var
+       i : byte;
+       MyArr: array [2..8] of int64;
+    begin
+        for i := 2 to 8 do
+        begin
+            A := FindNumber(i);
+            MyArr[i] := FindNewNumber(A);
+            Writeln(i,' : ',MyArr[i]);
+            Result.MyArray[i] := MyArr[i];
+        end;
+    end;
+
+    procedure ShowAnswer(A :TArr);
+    var
+       Min: int64;
+       i: byte;
+    begin
+        Min := A.MyArray[8];
+        for i := 2 to 8 do
+        begin
+            if A.MyArray[i] < Min then
+                Min := A.MyArray[i];
+        end;
+        Writeln(Min);
+        Readln;
+    end;
+
+    procedure main();
+    var
+        MyArray: array [2..8] of Int64;
+        Min, Num: Int64;
+        i: Byte;
+        NumArr: TArr;
+    begin
+        NumArr := GetArray(Num);
+        ShowAnswer(NumArr);
+    end;
+
+begin
+    main;
+end.

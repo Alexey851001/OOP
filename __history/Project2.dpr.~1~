@@ -1,0 +1,32 @@
+Program Project2;
+{$APPTYPE CONSOLE}
+uses
+  SysUtils;
+
+Var
+   Answer, i, num : Integer;
+   IsCorrect : Boolean;
+Begin
+   Answer := 1;
+   Writeln('This program find multiply for a given n');
+   repeat
+      Writeln('Enter the odd number in the range from 1 to 2^15-1');
+      IsCorrect := True;
+      try
+         Readln(num);
+      except
+         Iscorrect := False;
+         Writeln('Incorrect input, enter the odd number in the range from 1 to 2^15-1');
+      end;
+      if (IsCorrect) and not((num > 0) and (num mod 2 = 1)) then
+         IsCorrect := False;
+   until IsCorrect;
+   for i := 1 to num do
+      if i mod 2 = 1 then
+         Answer := Answer*4*i
+      else
+         Answer := Answer;
+   Writeln('Result this operation:', Answer);
+   Readln;
+end.
+

@@ -1,0 +1,31 @@
+program Project4;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+Var
+   Num, I, ArrLength, Buffer : integer;
+   ThatArray : array of integer;
+Begin
+   Writeln('Enter the number of the elements of the array');
+   Readln(Num);
+   SetLength(ThatArray, Num);
+   ArrLength := Num - 1;
+   Writeln('Enter the elements of the array');
+   for i := 0 to ArrLength do
+   Readln(ThatArray[I]);
+   Writeln('Start array ', ThatArray[I]);
+   for I := 0 to ArrLength do
+      if I mod 2 = 1 then
+      begin
+        Buffer := ThatArray[i];
+        ThatArray[i] := ThatArray[i - 1];
+        ThatArray[i - 1] := Buffer;
+      end;
+   for I := 0 to Length(ThatArray) - 1 do
+        Writeln(ThatArray[I], ' ');
+
+   Readln;
+End.

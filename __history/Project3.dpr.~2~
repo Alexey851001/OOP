@@ -1,0 +1,39 @@
+program Project3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var
+   a, b, x, x0, s, sa, sb, Esp: real;
+begin
+   writeln(' введите отрезок а б и велечину esp');
+   readln(a, b, Esp);
+   sa := exp(a) - 10 * a;
+   sb := exp(b) - 10 * b;
+   if sa*sb > 0 then
+   Writeln('На участке два или ни одного корня повторите попытку')
+   else
+   x0 := (a + b) / 2;
+   s := exp(x0) - 10 * x0;
+   while abs(s) > Esp do
+   begin
+   if sa*s < 0 then
+    begin
+      b:= x0;
+      x :=(a + b)/2;
+      s := exp(x) - 10 * x;
+      x0:=x;
+    end;
+   if sb * s < 0 then
+    begin
+      a := x0;
+      x := (a + b)/2;
+      s := exp(x) - 10 * x;
+      x0:=x;
+    end;
+   end;
+   writeln(x, '');
+   readln;
+end.

@@ -1,0 +1,35 @@
+program Recurs;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+function Recurs( m, n: Integer): Integer;
+var
+   num, k: Integer;
+begin
+   if m = 0 then
+      Num := n + 1;
+   if n = 0 then
+      Num := Recurs(m - 1, 1);
+   if (m > 0) and (n > 0) then
+      Num := Recurs(m - 1, Recurs(m , n - 1));
+   Recurs := Num;
+end;
+
+procedure Main;
+var
+   m, n, Answer: Integer;
+begin
+   Readln(m, n);
+   Answer := Recurs(m , n);
+   Writeln(Answer);
+   Readln;
+end;
+
+begin
+   Main;
+end.

@@ -1,0 +1,60 @@
+program Lab1_4;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var
+   Num, I, ArrLength: Byte;
+   Bufer: Integer;
+   ThatArray: array of Integer;
+   IsCorrect: Boolean;
+begin
+   IsCorrect := False;
+   Writeln('This program create a new array by changing in the start array elements with even places to elements with odd places');
+   repeat
+      Writeln('Enter the number of the elements of the array in the range from 2 to 255');
+      try
+         Readln(Num);
+         if (Num < 2) or (Num > 255) then
+         begin
+            IsCorrect := False;
+            Writeln('Incorrect input, the number of the elements of the array shoud be in the range from 2 to 255');
+         end
+         else
+            IsCorrect := True;
+      except
+         Writeln('Incorrect input, enter the number of the elements of the array in the range from 2 to 255');
+      end;
+   until IsCorrect;
+   SetLength(ThatArray, Num);
+   ArrLength := Num - 1;
+   Writeln('Enter the elements of the array in the range from -2^15 to 2^15 - 1');
+   for I := 0 to ArrLength do
+      repeat
+         IsCorrect := True;
+         try
+            Readln(ThatArray[I]);
+         except
+            IsCorrect := False;
+            Writeln('Incorrect input, enter the elements of the array in the range from -2^15 to 2^15 - 1');
+         end;
+      until IsCorrect;
+   Writeln('Start array is :');
+   for I := 0 to ArrLength do
+      Write(ThatArray[I],' ');
+   Writeln;
+   Writeln('New array is :');
+   for I := 0 to ArrLength do
+      if I mod 2 = 1 then
+      begin
+         Bufer := ThatArray[i];
+         ThatArray[I] := ThatArray[I - 1];
+         ThatArray[I - 1] := Bufer;
+      end;
+   for I := 0 to ArrLength do
+      Write(ThatArray[I], ' ');
+   Readln;
+end.
+

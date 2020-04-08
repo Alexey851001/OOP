@@ -1,0 +1,19 @@
+program Project3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var
+   a, b, x, x0, s, Esp: real;
+begin
+   readln(a, b);
+   x0 := (a + b) / 2;
+   s := exp(x0) - 10 * x0;
+
+   while abs(s) > Esp do
+   x :=
+
+
+end.

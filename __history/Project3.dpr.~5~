@@ -1,0 +1,54 @@
+program Project3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var
+   A, B, X, Equation, EquationA, EquationB, Eps: Real;
+   IsCorrect: Boolean;
+begin
+   repeat
+      IsCorrect := False;
+      try
+         Writeln('Enter the value of Esp in the range from 0 to 1');
+         Readln(Eps);
+            Writeln('Enter the ends of the segment [A,B] in the range from 2,9E-39 to 1,7E38 so that A is less then B ');
+            Readln(A, B);
+      except
+         Writeln('Incorrect input, enter the end of segment [A,B] in the range from 2,9E-39 to 1,7E38');
+      end;
+      if (Eps <= 0) and (Eps > 1) then
+         Writeln('Incorrect input, enter the value of esp in the range from 0 to 1')
+      else
+         if A > B then
+            Writeln('Incorrect input, A shoud be less than B')
+         else
+            IsCorrect := True;
+   until IsCorrect;
+   EquationA := exp(A) - 10 * A;
+   EquationB := exp(B) - 10 * B;
+   if EquationA*EquationB > 0 then
+      Writeln('On a segment two or no answer, try again')
+   else
+      X := (A + B) / 2;
+      Equation := exp(X) - 10 * X;
+      while abs(Equation) > Eps do
+      begin
+         if EquationA*Equation < 0 then
+         begin
+            B:= X;
+            X :=(A + B)/2;
+            Equation := exp(X) - 10 * X;
+         end
+         else
+         begin
+            A := X;
+            X := (A + B)/2;
+            Equation := exp(X) - 10 * X;
+         end;
+      end;
+      writeln('The answer of the equation is :', X:7:6);
+   readln;
+end.

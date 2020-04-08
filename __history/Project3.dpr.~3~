@@ -1,0 +1,47 @@
+program Project3;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+var
+   a, b, x, s, sa, sb, Esp: real;
+   IsCorrect: Boolean;
+begin
+   repeat
+      Writeln(' введите отрезок а,б чтобы а было меньше б и велечину esp по модулю гораздо меньше 1');
+      IsCorrect := False;
+      try
+        readln(a, b, Esp);
+        if a > b then
+           Writeln('введите отрезок а,б чтобы а было меньше б')
+        else
+           if  then
+
+      end;
+   sa := exp(a) - 10 * a;
+   sb := exp(b) - 10 * b;
+   if sa*sb > 0 then
+   Writeln('На участке два или ни одного корня повторите попытку')
+   else
+   x := (a + b) / 2;
+   s := exp(x) - 10 * x;
+   while abs(s) > Esp do
+   begin
+   if sa*s < 0 then
+    begin
+      b:= x;
+      x :=(a + b)/2;
+      s := exp(x) - 10 * x;
+    end;
+   if sb * s < 0 then
+    begin
+      a := x;
+      x := (a + b)/2;
+      s := exp(x) - 10 * x;
+    end;
+   end;
+   writeln(x, '');
+   readln;
+end.
