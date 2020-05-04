@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_112" class="java.beans.XMLDecoder">
+ <object class="sample.Ship" id="Ship0">
+  <void class="sample.Ship" method="getField">
+   <string>maxSpeed</string>
+   <void method="set">
+    <object idref="Ship0"/>
+    <int>23</int>
+   </void>
+  </void>
+  <void class="sample.Ship" method="getField">
+   <string>mass</string>
+   <void method="set">
+    <object idref="Ship0"/>
+    <int>23</int>
+   </void>
+  </void>
+ </object>
+ <object class="sample.Sailboat" id="Sailboat0">
+  <void class="sample.Sailboat" method="getField">
+   <string>fairWind</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <boolean>true</boolean>
+   </void>
+  </void>
+  <void class="sample.Sailboat" method="getField">
+   <string>classification</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <string>class java.lang.String</string>
+   </void>
+  </void>
+  <void class="sample.Sailboat" method="getField">
+   <string>boat</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <object class="sample.Boat" id="Boat0">
+     <void class="sample.Boat" method="getField">
+      <string>paddels</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <boolean>true</boolean>
+      </void>
+     </void>
+     <void class="sample.Boat" method="getField">
+      <string>motor</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <boolean>true</boolean>
+      </void>
+     </void>
+     <void class="sample.Boat" method="getField">
+      <string>countOfPassengers</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <byte>34</byte>
+      </void>
+     </void>
+     <void class="sample.SurfaceShip" method="getField">
+      <string>waterlineHeight</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <int>32</int>
+      </void>
+     </void>
+     <void class="sample.SurfaceShip" method="getField">
+      <string>material</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <string>class java.lang.String</string>
+      </void>
+     </void>
+     <void class="sample.Ship" method="getField">
+      <string>maxSpeed</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <int>23</int>
+      </void>
+     </void>
+     <void class="sample.Ship" method="getField">
+      <string>mass</string>
+      <void method="set">
+       <object idref="Boat0"/>
+       <int>23</int>
+      </void>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void class="sample.SurfaceShip" method="getField">
+   <string>waterlineHeight</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <int>23</int>
+   </void>
+  </void>
+  <void class="sample.SurfaceShip" method="getField">
+   <string>material</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <string>class java.lang.String</string>
+   </void>
+  </void>
+  <void class="sample.Ship" method="getField">
+   <string>maxSpeed</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <int>23</int>
+   </void>
+  </void>
+  <void class="sample.Ship" method="getField">
+   <string>mass</string>
+   <void method="set">
+    <object idref="Sailboat0"/>
+    <int>23</int>
+   </void>
+  </void>
+ </object>
+ <object idref="Boat0"/>
+</java>

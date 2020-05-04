@@ -1,0 +1,3 @@
+sample.Sailboat_7911631(fairWind:true;classification:class java.lang.String;boat:sample.Boat_7961497;waterlineHeight:44;material:class java.lang.String;maxSpeed:343;mass:3;)
+sample.Sailboat_5391278(fairWind:true;classification:class java.lang.String;boat:sample.Boat_7961497;waterlineHeight:767;material:class java.lang.String;maxSpeed:6;mass:6767;)
+sample.Boat_7961497(paddels:true;motor:false;countOfPassengers:23;waterlineHeight:23;material:class java.lang.String;maxSpeed:32;mass:1;)
