@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.5" class="java.beans.XMLDecoder">
+ <object class="sample.Ship" id="Ship0">
+  <void class="sample.Ship" method="getField">
+   <string>maxSpeed</string>
+   <void method="set">
+    <object idref="Ship0"/>
+    <int>235523</int>
+   </void>
+  </void>
+  <void class="sample.Ship" method="getField">
+   <string>mass</string>
+   <void method="set">
+    <object idref="Ship0"/>
+    <int>2343</int>
+   </void>
+  </void>
+ </object>
+</java>
